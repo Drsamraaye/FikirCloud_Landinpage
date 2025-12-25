@@ -1,6 +1,7 @@
 'use client';
 
 import { Search, Cog, Rocket, GraduationCap, Play, LineChart } from 'lucide-react';
+import Link from 'next/link';
 
 const steps = [
     { number: 1, title: 'Strategic Audit', description: "We identify your institution's unique operational challenges.", icon: Search },
@@ -24,7 +25,7 @@ export default function HowItWorks() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
                     {steps.map((s) => (
-                        <div key={s.number} className="relative group">
+                        <Link key={s.number} href="/how-it-works" className="relative group block cursor-pointer">
                             <div className="flex gap-8">
                                 <div className="flex-shrink-0 relative">
                                     <div className="w-16 h-16 bg-blue-600/10 text-blue-600 rounded-2xl flex items-center justify-center font-black text-xl shadow-lg shadow-blue-600/5 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 overflow-hidden relative">
@@ -42,7 +43,7 @@ export default function HowItWorks() {
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

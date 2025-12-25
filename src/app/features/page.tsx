@@ -1,6 +1,7 @@
 'use client';
 
 import { Users, BarChart3, Wallet, FileText, CheckCircle2 } from 'lucide-react';
+import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -10,28 +11,32 @@ const featureDetails = [
         description: 'From admission to graduation, track every milestone in a student\'s journey with automated records and profile management.',
         icon: Users,
         color: 'blue',
-        benefits: ['Automated admissions', 'Centralized student profiles', 'Academic history tracking']
+        benefits: ['Automated admissions', 'Centralized student profiles', 'Academic history tracking'],
+        image: '/studentcycle2.png'
     },
     {
         title: 'Attendance Automation',
         description: 'Ditch the paper logs. Our real-time attendance system provides instant notifications and comprehensive reports for staff and students.',
         icon: BarChart3,
         color: 'indigo',
-        benefits: ['Biometric integration', 'SMS alerts for parents', 'Monthly percentage reports']
+        benefits: ['Biometric integration', 'SMS alerts for parents', 'Monthly percentage reports'],
+        image: '/attendance.png'
     },
     {
         title: 'Financial Oversight',
         description: 'Complete transparency in school finances. Automated fee collection, digital invoicing, and real-time expense tracking.',
         icon: Wallet,
         color: 'emerald',
-        benefits: ['Online fee payments', 'Inventory management', 'Payroll automation']
+        benefits: ['Online fee payments', 'Inventory management', 'Payroll automation'],
+        image: '/financial.png'
     },
     {
         title: 'Exam & Result Management',
         description: 'Advanced grading systems that handle complex curriculum requirements and generate professional report cards in seconds.',
         icon: FileText,
         color: 'violet',
-        benefits: ['Custom grading scales', 'Instant result publishing', 'Performance analytics']
+        benefits: ['Custom grading scales', 'Instant result publishing', 'Performance analytics'],
+        image: '/exams.png'
     },
 ];
 
@@ -69,8 +74,13 @@ export default function FeaturesPage() {
                                             ))}
                                         </ul>
                                     </div>
-                                    <div className="relative aspect-video rounded-3xl bg-secondary/50 border border-border overflow-hidden flex items-center justify-center">
-                                        <p className="text-muted-foreground font-bold italic">Module Preview Interface</p>
+                                    <div className="relative aspect-video rounded-3xl bg-secondary/50 border border-border overflow-hidden group-hover:scale-[1.02] transition-transform duration-500">
+                                        <Image
+                                            src={f.image}
+                                            alt={f.title}
+                                            fill
+                                            className="object-cover"
+                                        />
                                         {/* Decorative Glow */}
                                         <div className={`absolute -bottom-20 -right-20 w-64 h-64 bg-${f.color}-500/10 blur-[100px] rounded-full`}></div>
                                     </div>
